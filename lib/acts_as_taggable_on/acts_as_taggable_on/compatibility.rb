@@ -9,7 +9,7 @@ module ActsAsTaggableOn::Compatibility
   end
 
   def build_scope_and_options(opts)
-    scope_opts, opts = parse_options(opts)
+    scope_opts, opts = ActiveRecord::Base.parse_options(opts)
 
     unless scope_opts.empty?
       scope = lambda do
